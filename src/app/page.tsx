@@ -37,7 +37,7 @@ export default function Login() {
         return (
           <div key={element.id}>
             <TextField fullWidth select label={element.title} name={element.ref} variant="outlined">
-              {element.properties.choices.map((choice) => (
+              {element.properties.choices && element.properties.choices.map((choice) => (
                 <MenuItem key={choice.id} value={choice.label}>
                   {choice.label}
                 </MenuItem>
@@ -74,7 +74,7 @@ export default function Login() {
         return (
           <div key={element.id}>
             <TextField fullWidth select label={element.title} name={element.ref} variant="outlined">
-              {element.properties.choices.map((choice) => (
+              {element.properties.choices && element.properties.choices.map((choice) => (
                 <MenuItem key={choice.id} value={choice.label}>
                   {choice.label}
                 </MenuItem>
@@ -99,7 +99,7 @@ export default function Login() {
         Typeform schema eaxmple
       </Typography>
       <Typography variant="caption">
-        Now support only support type
+        Now support only type
         short_text,
         multiple_choice,
         long_text,
@@ -111,7 +111,7 @@ export default function Login() {
         <form onSubmit={handleSubmit}>
           <Box display="flex" alignItems="center" gap={2}>
             <Typography variant="h6">
-              example id: RDw7hfH7
+              Example id: RDw7hfH7
             </Typography>
             <TextField placeholder="RDw7hfH7" disabled={loading} type="text" required value={formId} onChange={(e) => setFormId(e.target.value)} />
             <Button type="submit" disabled={loading} variant="contained">get form</Button>
